@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+</head>
+<body bgcolor="#f0fff0">
+{% include 'menu.html' %}
+<div style="text-align: center;color: red;font-family: chiller;font-size: 30px">
+    <h2>Patient's Registration</h2>
+</div>
+<div style="width:200px ;height: 30px; margin:0 auto;" >
+<form action="" method="post" class="form-horizontal">
+    {% csrf_token %}
+    <div class="form-group">
+        <label class="control-label col-xs-1" for="name">{{ form.firstname.label }}:</label>
+        <div class="col-xs-9">
+            {{ form.firstname }}
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-1" for="name">{{ form.lastname.label }}:</label>
+        <div class="col-xs-9">
+            {{ form.lastname }}
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-1" for="name">{{ form.age.label }}:</label>
+        <div class="col-xs-9">
+            {{ form.age }}
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-1" for="name">{{ form.gender.label }}:</label>
+        <div class="col-xs-9">
+            {{ form.gender }}
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-1" for="name">{{ form.address.label }}:</label>
+        <div class="col-xs-9">
+            {{ form.address }}
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-1" for="name">{{ form.username.label }}:</label>
+        <div class="col-xs-9">
+            {{ form.username }}
+        </div>
+
+    </div>
+<div class="form-group">
+        <label class="control-label col-xs-1" for="name">{{ form.password.label }}:</label>
+        <div class="col-xs-9">
+            {{ form.password }}
+        </div>
+
+    </div>
+
+
+<div style="text-align: center">
+     <input class="btn btn-primary col-xs-offset-1 col-xs-9" type="submit" value="Save" >
+</div>
+
+</form>
+</div>
+
+</body>
+</html>

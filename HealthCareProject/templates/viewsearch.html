@@ -1,0 +1,27 @@
+<html>
+<body bgcolor="#e9967a">
+{% include 'usermenu.html' %}
+<br>
+{% if res %}
+<table style="text-align: center" border="2">
+  <tr> <th colspan="4"> <h3> Medicine Details </h3></th></tr>
+    <tr>
+        <th> Disease Name </th>
+        <th> Symptom Name </th>
+        <th> Medicine Name </th>
+        <th> Medicine Description </th>
+    </tr>
+    {% for x in res %}
+    <tr>
+        <th> {{ x.disease_name }} </th>
+        <th> {{ x.symptoms }} </th>
+        <th> {{ x.medicine_name}} </th>
+        <th> {{ x.medicine_description}} </th>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<center> <b> Sorry, the entered disease name is not available </b></center>
+{% endif %}
+</body>
+</html>

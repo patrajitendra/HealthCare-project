@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+</head>
+<body bgcolor="#f0fff0">
+{% include 'menu.html' %}
+<div>
+    <h2 style="text-align: center">Admin Login</h2>
+</div>
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+<div style="text-align: center">
+    <div>
+        <input type="text" placeholder="Username" required name="t1">
+
+    </div>
+    <div>
+        <input type="password" placeholder="Password" required name="t2">
+    </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+
+
+</div>
+    {% if error %}
+    <div>
+        <h3 style="text-align: center">{{ error }}</h3>
+    </div>
+    {% endif %}
+</form>
+</body>
+</html>

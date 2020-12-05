@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+</head>
+<body bgcolor="#f0fff0">
+{% include 'menu.html' %}
+<style>
+    .two {
+        color: red;
+        font-size: 25px;
+    }
+    table th{
+
+        height: 50px;
+        background-color: black;
+        color: #b6ff5d;
+    }
+</style>
+
+    <table align="center" border="2" class="table table-hover">
+        <tr>
+            <th colspan="5" style="text-align: center;padding: 20px;line-height: normal;color: hotpink;font-size: 20px">View All Diseases/Medicine</th>
+        </tr>
+        <tr>
+            <th class="two">Disease Name</th>
+            <th class="two">Symptoms</th>
+            <th class="two">Medicine Name</th>
+            <th class="two">Medicine Description</th>
+        </tr>
+        {% for i in object_list %}
+            <tr>
+            <th>{{ i.disease_name}}</th>
+            <th>{{ i.symptoms}}</th>
+            <th>{{ i.medicine_name}}</th>
+            <th>{{ i.medicine_description}}</th>
+            </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>

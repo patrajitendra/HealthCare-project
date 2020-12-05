@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Medicine</title>
+
+
+</head>
+<body bgcolor="#f0fff0">
+{% include 'adminmenu.html' %}
+<img src="{% static 'images/img03.jpg' %}" width="100%">
+<style>
+    .two {
+        color: red;
+        font-size: 25px;
+    }
+    table th{
+        background-color: black;
+        color: #b6ff5d;
+    }
+</style>
+
+    <table align="center" border="2">
+        <tr>
+            <th colspan="4" style="text-align: center;padding: 20px;line-height: normal;color: hotpink;font-size: 20px">Viewn All Medicine</th>
+        </tr>
+        <tr>
+            <th class="two">Disease Name</th>
+            <th class="two">Medicine Name</th>
+
+        </tr>
+        {% for i in object_list %}
+            <tr>
+            <th>{{ i.disease_name}}</th>
+            <th>{{ i.medicine_name}}</th>
+            </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
